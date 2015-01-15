@@ -1,11 +1,13 @@
 var Backbone = require('backbone');
-var template = require('templates/tweets.hbs');
+var config = require('js/config');
+var Twitter = require('twitter').Twitter;
 
 module.exports = Backbone.Collection.extend({
-  /**
-   * url for twitter tweets api.
-   */
-  url: 'https://api.twitter.com/1.1/search/tweets.json',
+  twitter: null,
+
+  initialize: function(options) {
+    this.twitter = new Twitter(config.twitterOptions);
+  },
 
   /**
    * The Twitter Search API returns tweets under "results".

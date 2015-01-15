@@ -34,7 +34,7 @@ module.exports = {
   resolve: {
     alias: {
       'twitter': 'twitter-js-client',
-    }
+    },
     fallback: './src/utils/hbs-helpers',
     modulesDirectories: ['node_modules', 'src']
   }
